@@ -49,7 +49,7 @@ if A_OSVersion in WIN_NT4,WIN_95,WIN_98,WIN_ME  ; If not Windows XP or greater, 
     ExitApp
 }
 ;*************************************************
-version = Generic_Midi_App_0.71  ; Version name and number
+version = Launchpad_Agda_Macros_1.0  ; Version name and number
 ;*************************************************
 readini()                                            ; Load values from the ini file, via the readini function - see Midi_In_Out_Lib.ahk file
 gosub, MidiPortRefresh                  ; used to refresh the input and output port lists - see Midi_In_Out_Lib.ahk file
@@ -81,7 +81,7 @@ CCIntDelta = 1     ; Amount to change CC (data byte 2)
 /* 
  TODO Make .ini entry for this label - for use with hotkey2midi_2 method only to write it might need a gui too????
 */
-settimer, KeyboardCCs, 50 ; KeyBoardCCs is located in HotKeyTOMidi2.ahk > timer (loop of code) to run the KeyboardCCs at the 70ms interval
+settimer, KeyboardCCs, 25 ; KeyBoardCCs is located in HotKeyTOMidi2.ahk > timer (loop of code) to run the KeyboardCCs at the 70ms interval
 ; settimer, MidiRules, 70 ; does not seem to work  not needed called during onmessage detect
 
 ;*****************************************************************
