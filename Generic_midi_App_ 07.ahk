@@ -57,6 +57,7 @@ port_test(numports,numports2)   ; test the ports - check for valid ports? - see 
 gosub, midiin_go                            ; opens the midi input port listening routine see Midi_In_Out_Lib.ahk file
 gosub, midiout                               ; opens the midi out port see Midi_In_Out_Lib.ahk file 
 gosub, midiMon                             ; see below - a monitor gui - see Midi_In_Out_Lib.ahk file  COMMENT THIS OUT IF YOU DON'T WANT DISPLAY
+gosub, initGlobals ; intiializes global tables used by macros
 
 ;*************************************************
 ;*         VARIBLES TO SET @ STARTUP
@@ -136,7 +137,6 @@ SendNote:   ;(h_midiout,Note) ; send out note messages ; this should probably be
   vel = %data2%
   midiOutShortMsg(h_midiout, statusbyte, note, vel) ; call the midi funcitons with these params.
     stb := "NoteOn"
-    statusbyte := 144
     chan 	= %channel%
     data1 = %Note%			; set value of the data1 to the above cc_num for display on the midi out window (only needed if you want to see output)	
     data2 = %Vel%	
