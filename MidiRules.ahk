@@ -142,9 +142,9 @@ if statusbyte between 144 and 159 ; detect if note message is "note on"
             }
 
             data2 := ModLights[Mod1]
-        } else if (Mod1 != 1) and macros_mod1[data1] {
+        } else if (Mod1 != 1) and macros_mod1[data1][2] {
             data2 := macros_mod1[data1][2]
-        } else if (macros[data1]) {
+        } else if (macros[data1][2]) {
             data2 := macros[data1][2]
         } else {
             data2 := 0
